@@ -1,3 +1,7 @@
+# merge_counter_data.R
+# written by Tim Riley
+# run this script when counter data in 'all' folder is updated
+
 packages <- c(
   "tidyverse",
   "fs",
@@ -37,7 +41,7 @@ tidy_tibble <- merged_tibble %>%
   drop_na() %>%
   left_join(locations)
 
-output_file <- paste(here("data"), "all_tidy.csv", sep = "/")
+output_file <- paste(here("data"), "all_counters.csv", sep = "/")
 
 write_csv(tidy_tibble, output_file)
   
